@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><i class="fas fa-graduation-cap"></i> SRMS</h1>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#sdlc">SDLC</a></li>
+                <li><a href="#system">System</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Student Result Management System</h1>
+            <p>Efficient academic data management through structured software development</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('system')">
+                    <i class="fas fa-play"></i> Explore System
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('sdlc')">
+                    <i class="fas fa-cog"></i> View SDLC
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About the Project</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Management</h3>
+                    <p>Efficient storage, retrieval, and management of student academic records</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-terminal"></i>
+                    <h3>Command-Line Interface</h3>
+                    <p>User-friendly CLI with menu-driven options for seamless navigation</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-python"></i>
+                    <h3>Python Implementation</h3>
+                    <p>Leveraging Python's readability and built-in features for robust development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SDLC Section -->
+    <section id="sdlc" class="sdlc">
+        <div class="container">
+            <h2>Software Development Life Cycle</h2>
+            <div class="sdlc-timeline">
+                <div class="timeline-item" data-phase="1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-search"></i> Requirement Analysis</h3>
+                        <p>Clearly defined system goals focusing on storing, retrieving, and managing student academic data efficiently through a command-line interface.</p>
+                        <ul>
+                            <li>Student data storage requirements</li>
+                            <li>CLI interface specifications</li>
+                            <li>Performance and reliability goals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-phase="2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-drafting-compass"></i> Design Phase</h3>
+                        <p>Application architecture outlined with user-friendly interface and menu-driven navigation for optimal user experience.</p>
+                        <ul>
+                            <li>System architecture planning</li>
+                            <li>User interface design</li>
+                            <li>Module structure definition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-phase="3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-code"></i> Development Phase</h3>
+                        <p>Application coded using Python with file handling, input validation, and grading logic for a reliable and efficient system.</p>
+                        <ul>
+                            <li>Core functionality implementation</li>
+                            <li>File I/O operations</li>
+                            <li>Data validation and processing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-phase="4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-bug"></i> Testing Phase</h3>
+                        <p>Manual testing of each feature to identify bugs, validate calculations, and verify file operations under various scenarios.</p>
+                        <ul>
+                            <li>Feature testing and bug identification</li>
+                            <li>Grade calculation validation</li>
+                            <li>File operation verification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Demo Section -->
+    <section id="system" class="system-demo">
+        <div class="container">
+            <h2>System Interface Demo</h2>
+            <div class="demo-container">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <span class="terminal-title">Student Result Management System</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-output">
+                        <div class="terminal-line">$ python student_management.py</div>
+                        <div class="terminal-line">
+                            ==========================================<br>
+                            STUDENT RESULT MANAGEMENT SYSTEM<br>
+                            ==========================================<br>
+                            1. Add Student Record<br>
+                            2. View All Students<br>
+                            3. Search Student<br>
+                            4. Delete Student Record<br>
+                            5. Calculate Grades<br>
+                            6. Exit<br>
+                            ==========================================<br>
+                            Enter your choice (1-6): <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="system-controls">
+                    <h3>System Features</h3>
+                    <div class="feature-buttons">
+                        <button class="feature-btn" onclick="simulateFeature('add')">
+                            <i class="fas fa-user-plus"></i> Add Student
+                        </button>
+                        <button class="feature-btn" onclick="simulateFeature('view')">
+                            <i class="fas fa-list"></i> View Records
+                        </button>
+                        <button class="feature-btn" onclick="simulateFeature('search')">
+                            <i class="fas fa-search"></i> Search Student
+                        </button>
+                        <button class="feature-btn" onclick="simulateFeature('delete')">
+                            <i class="fas fa-trash"></i> Delete Record
+                        </button>
+                        <button class="feature-btn" onclick="simulateFeature('grade')">
+                            <i class="fas fa-calculator"></i> Calculate Grades
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Implementation -->
+    <section id="implementation" class="implementation">
+        <div class="container">
+            <h2>Sample Python Implementation</h2>
+            <div class="code-container">
+                <div class="code-header">
+                    <span class="language">Python</span>
+                    <button class="copy-btn" onclick="copyCode()">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <pre class="code-block" id="python-code">
+class StudentResultManagement:
+    def __init__(self):
+        self.students = {}
+        self.data_file = "students.txt"
+        self.load_data()
+    
+    def add_student(self, student_id, name, subjects_marks):
+        """Add a new student record"""
+        if student_id in self.students:
+            print("Student already exists!")
+            return False
+        
+        self.students[student_id] = {
+            'name': name,
+            'marks': subjects_marks,
+            'grade': self.calculate_grade(subjects_marks)
+        }
+        self.save_data()
+        print(f"Student {name} added successfully!")
+        return True
+    
+    def calculate_grade(self, marks):
+        """Calculate grade based on average marks"""
+        avg = sum(marks.values()) / len(marks)
+        if avg >= 90: return 'A+'
+        elif avg >= 80: return 'A'
+        elif avg >= 70: return 'B'
+        elif avg >= 60: return 'C'
+        elif avg >= 50: return 'D'
+        else: return 'F'
+    
+    def view_students(self):
+        """Display all student records"""
+        if not self.students:
+            print("No student records found!")
+            return
+        
+        for sid, data in self.students.items():
+            print(f"ID: {sid} | Name: {data['name']} | Grade: {data['grade']}")
+    
+    def search_student(self, student_id):
+        """Search for a specific student"""
+        if student_id in self.students:
+            student = self.students[student_id]
+            print(f"Name: {student['name']}")
+            print(f"Marks: {student['marks']}")
+            print(f"Grade: {student['grade']}")
+        else:
+            print("Student not found!")
+    
+    def save_data(self):
+        """Save data to file"""
+        with open(self.data_file, 'w') as f:
+            for sid, data in self.students.items():
+                f.write(f"{sid},{data['name']},{data['marks']},{data['grade']}\n")
+    
+    def load_data(self):
+        """Load data from file"""
+        try:
+            with open(self.data_file, 'r') as f:
+                # File loading implementation
+                pass
+        except FileNotFoundError:
+            print("No existing data file found. Starting fresh.")
+
+# Main execution
+if __name__ == "__main__":
+    srms = StudentResultManagement()
+    
+    while True:
+        print("\n" + "="*40)
+        print("STUDENT RESULT MANAGEMENT SYSTEM")
+        print("="*40)
+        print("1. Add Student Record")
+        print("2. View All Students") 
+        print("3. Search Student")
+        print("4. Delete Student Record")
+        print("5. Calculate Grades")
+        print("6. Exit")
+        print("="*40)
+        
+        choice = input("Enter your choice (1-6): ")
+        
+        if choice == '1':
+            # Add student implementation
+            pass
+        elif choice == '6':
+            print("Thank you for using SRMS!")
+            break
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Project Information</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li>Python 3.x</li>
+                        <li>File I/O Operations</li>
+                        <li>Command Line Interface</li>
+                        <li>Data Validation</li>
+                    </ul>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-features"></i>
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Student Record Management</li>
+                        <li>Grade Calculation</li>
+                        <li>Data Persistence</li>
+                        <li>Search & Filter</li>
+                    </ul>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Benefits</h3>
+                    <ul>
+                        <li>Efficient Data Management</li>
+                        <li>User-Friendly Interface</li>
+                        <li>Reliable Performance</li>
+                        <li>Scalable Architecture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Student Result Management System. Developed using structured SDLC approach.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
